@@ -75,6 +75,8 @@ services:
       - "traefik.http.routers.n8n.rule=Host(`n8n.savorcare.com`)"
       - "traefik.http.routers.n8n.entrypoints=websecure"
       - "traefik.http.routers.n8n.tls.certresolver=myresolver"
+      - "traefik.http.routers.n8n.tls.domains[0].main=savorcare.com"
+      - "traefik.http.routers.n8n.tls.domains[0].sans=*.savorcare.com"
       - "traefik.http.routers.n8nhttp.rule=Host(`n8n.savorcare.com`)"
       - "traefik.http.routers.n8nhttp.entrypoints=web"
       - "traefik.docker.network=reverse-proxy"
